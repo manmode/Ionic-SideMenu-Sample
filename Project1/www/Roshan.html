@@ -1,0 +1,48 @@
+<!--
+<html ng-app='ShoppingCart'>
+<head>
+    <title>
+    Shopping Site
+    </title>
+    </head>
+    <body ng-controller="ItemsListController as ilist">
+        
+        <ul class="nav nav-pills">
+            <li><a href ng-click="tab=1">Items List</a></li>
+            <li><a href ng-click="tab=2">Feedback</a></li>
+            <li><a href ng-click="tab=3">Contact Us</a></li>
+            
+        </ul>
+        
+        {{tab}}
+        
+        <div ng-show="item.avl"  ng-repeat="item in ilist.items | orderBy:'price'" >
+            <img width="50" height="50" ng-src="{{item.preview.picture}}"> 
+            <em class='pull-right'>name: {{item.name}}<em class='pull-right'>{{item.price | currency}}</em></em>
+            </img>
+            <h3>Colors Avlb : {{item.availablecolors}}</h3>
+            <button >Add to cart</button>
+        </div>
+        
+        <script src="lib/ionic/js/angular/angular.min.js"></script>
+        <script src="js/AngularDemo.js"></script>
+    </body>
+</html>
+
+-->
+
+<ion-view ng-app="ShoppingCart" view-title="Shopping cart">
+<ion-content ng-controller="ItemsListController as ilist">
+    <ion-list >
+        <ion-item class="item-remove-animate item-avatar item-icon-right"  ng-repeat="item in ilist.items" type="item-text-wrap">
+        
+            <img width="50" height="50" ng-src="{{item.preview.picture}}">
+            <em class='pull-right'>name: {{item.name}}<em class='pull-right'>{{item.price | currency}}</em></em>
+            </img>
+        
+        
+    </ion-item>
+    </ion-list>
+</ion-content>    
+    
+</ion-view>
